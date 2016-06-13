@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Baloon</title>
+		<style>
+			#balloon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: auto;
+				border-radius: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="balloon" onclick="ft_click()" onmouseout="ft_hover()"></div>
+		<script>
+			var balloon;
+			var size = 200;
+			var color = 0;
+
+			function ft_click() {
+				balloon = document.getElementById('balloon');
+				size += 10;
+				if (size > 420)
+					size = 200;
+				balloon.style.width = size + 'px';
+				balloon.style.height = size + 'px';
+				balloon.style.borderRadius = size / 2 + 'px';
+				if (color == 0) {
+					balloon.style.backgroundColor = 'green';
+					color = 1;
+				}
+				else if (color == 1) {
+					balloon.style.backgroundColor = 'blue';
+					color = 2;					
+				}
+				else if (color == 2) {
+					balloon.style.backgroundColor = 'red';
+					color = 0;
+				}
+			}
+
+			function ft_hover() {
+				balloon = document.getElementById('balloon');
+				size -= 5;
+				if (size < 200)
+					size = 200;					
+				balloon.style.width = size + 'px';
+				balloon.style.height = size + 'px';
+				balloon.style.borderRadius = size / 2 + 'px';
+				if (color == 0) {
+					balloon.style.backgroundColor = 'blue';
+					color = 2;
+				}
+				else if (color == 1) {
+					balloon.style.backgroundColor = 'red';
+					color = 0;					
+				}
+				else if (color == 2) {
+					balloon.style.backgroundColor = 'green';
+					color = 1;
+				}
+
+			}
+		</script>
+	</body>
+</html>

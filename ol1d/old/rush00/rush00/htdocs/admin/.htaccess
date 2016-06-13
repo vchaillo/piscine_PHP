@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "/nfs/zfs-student-5/users/2014/jbarbie/mamp/apps/rush00/htdocs/admin/.htpasswd"
+Require valid-user

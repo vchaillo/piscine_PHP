@@ -1,0 +1,22 @@
+<- Vertex ----------------------------------------------------------------------
+The Vortex class handles the representation of a point in space.
+
+An instance can be constructed from disctinct x, y, z, w and a Color class.
+( $instance = new Color( array( 'red' => 255, 'green' => 255, 'blue' => 255 ) ); )
+new Vortex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 0.0, 'color' => $instance ) );
+
+x, y, z must be numbers and are required to construct a new instance.
+w must be a number and color a class Color, they will be set to 1.00 and white if not defined.
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Vortex   add( Vortex $instance )
+Adds each vortex constitutive and returns a new vortex instance.
+
+Vortex   sub( Vortex $instance )
+Substracts each vortex constitutive and returns a new vortex instance.
+
+Vortex   mult( Vortex $nb )
+Multiplies each vortex constitutive by factor $nb and returns a new vortex instance.
+---------------------------------------------------------------------- Vertex ->
