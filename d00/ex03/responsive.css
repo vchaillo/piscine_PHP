@@ -7,12 +7,12 @@ body
 table
 {
 	width: 100%;
-	max-width: 1000px;
 	margin: auto;
 	border-spacing: 5px;
 }
 td 
 {
+	width: 5.555555%;
 	border: none;
 }
 td.void
@@ -25,25 +25,26 @@ tr.void
 }
 .M
 {
-	font-size: 0.8vw;
+	font-size: 0.7vw;
 	text-align: right;
 	margin-right: 3px;
 	margin-top: 3px;
 }
 .Symbol
 {
-	font-size:1.7vw;
+	font-size:1.5vw;
 	text-align: center;
+	font-weight: bold;
 }
 .Name
 {
-	font-size: 0.6vw;
+	font-size: 0.7vw;
 	text-align: center;
 }
 .Z
 {
-	font-size: 1vw;
-	text-align: left;
+	font-size: 0.8vw;
+	text-align: center;
 	margin-top: 3px;
 	margin-left: 3px;
 }
