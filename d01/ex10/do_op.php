@@ -27,7 +27,10 @@ if ($argc == 4)
 	}
 	else if ($tab[1] == "/")
 	{
-		$res = $tab[0] / $tab[2];
+		if ($tab[2] == "0")
+			$res = "Invalid division by zero";
+		else
+			$res = $tab[0] / $tab[2];
 	}
 	else if ($tab[1] == "%")
 	{

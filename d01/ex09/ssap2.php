@@ -1,43 +1,78 @@
 #!/usr/bin/php
 <?php
 
-$count = 1;
+function ft_strlen($str)
+{
+	$i = 0;
+	while ($str[$i] != "")
+		$i++;
+	return ($i);
+}
+
+function	char_cmp($a, $b)
+{
+	if (ctype_alpha($a))
+	{
+		if (ctype_alpha($b))
+			return (strcasecmp($a, $b));
+		else
+			return (-1);
+	}
+	if (ctype_alpha($b))
+	{
+		if (ctype_alpha($a))
+			return (strcasecmp($a, $b));
+		else
+			return (1);
+	}
+	if (is_numeric($a))
+	{
+		if (is_numeric($b))
+			return ($a - $b);
+		else
+			return (-1);
+	}
+	if (is_numeric($b))
+	{
+		if (is_numeric($a))
+			return ($a - $b);
+		else
+			return (1);
+	}
+	return (ord($a) - ord($b));
+}
+
+function	ft_compare($stra, $strb)
+{
+	$minlen = ft_strlen($stra);
+	if (ft_strlen($strb) < $minlen)
+		$minlen = ft_strlen($strb);
+	
+	$i = 0;
+	while ($i < $minlen)
+	{
+		if (($ret = char_cmp($stra[$i], $strb[$i])) != 0)
+			return ($ret);
+		$i++;
+	}
+	return (ft_strlen($stra) - ft_strlen($strb));
+}
 
 if ($argc > 1)
 {
-	print_r($argv);
 	unset($argv[0]);
 	$str = implode(" ", $argv);
 	$str = trim($str);
+	$count = 1;
 	while ($count != 0)
 	{
 		$str = str_replace("  ", " ", $str, $count);
 	}
-	$tab = explode(" ", $str);
-	foreach($tab as &$elem)
-	{
-		if (is_numeric($elem))
-		{
-			$num_tab[] = $elem;
-		}
-		else if (ctype_alpha($elem))
-		{
-			$alpha_tab[] = $elem;
-		}
-		else
-		{
-			$spe_tab[] = $elem;
-		}
-	}
-	sort($alpha_tab, SORT_STRING | SORT_FLAG_CASE);
-	sort($num_tab, SORT_STRING | SORT_FLAG_CASE);
-	sort($spe_tab, SORT_STRING | SORT_FLAG_CASE);
-	foreach($alpha_tab as $elem)
-		echo "$elem\n";
-	foreach($num_tab as $elem)
-		echo "$elem\n";
-	foreach($spe_tab as $elem)
-		echo "$elem\n";
+	$tab = explode(" ", $str);	
+	usort($tab, "ft_compare");
+
+	foreach ($tab as $elem)
+		echo $elem . PHP_EOL;
 }
 
 ?>
