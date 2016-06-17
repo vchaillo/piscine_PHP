@@ -1,0 +1,40 @@
+Todo List:
+==========
+
+Header:
+------
+
+	- Texture
+	- Boutons a refaire
+	- Equilibrage responsive
+
+Page Home:
+-------------
+
+	- Gerer le fond d'ecran
+	- Incruster encarts supplementaires
+	- Gerer la connection autopmatique
+
+Page Sign in:
+-------------
+
+	- Rendre la connexion fonctionnelle
+
+Page Sign up:
+-------------
+
+	- Permettre l'inscription et l'ajout d'un user a la db
+	- Afficher un message si le user name est existant
+	- Afficher un message si le mot de passe n'est pas valide
+		- 8 caracteres min et correspondance entre le premier et le deuxieme password
+
+Page Product:
+-------------
+
+	- Creer la page et la rendre dynamique pour qu'elle aille chercher image text dans la db
+
+Page Categories:
+-------------
+
+Page Cart:
+---------
