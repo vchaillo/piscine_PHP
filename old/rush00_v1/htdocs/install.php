@@ -53,7 +53,7 @@ $sql = "CREATE TABLE Product (
 	description TEXT(1000) NOT NULL,
 	price INT(6) NOT NULL)";
 if (mysqli_query($minishop, $sql)) {
-    echo "Table Users created successfully\n";
+    echo "Table Product created successfully\n";
 } else {
     echo "Error creating table: " . mysqli_error($minishop) . "\n";
 }
