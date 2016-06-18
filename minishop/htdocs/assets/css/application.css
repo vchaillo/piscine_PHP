@@ -120,27 +120,3 @@ input[type="submit"]:hover, button:hover, .btn:hover
 {
     background-color: #149200;
 }
-
-.product img
-{
-    width: 80%;
-}
-
-.product p
-{
-    margin: auto;
-    max-width: 600px;
-}
-
-table
-{
-    width: 100%;
-}
-th
-{
-    text-align: left;
-}
-td
-{
-    width: 25%;
-}

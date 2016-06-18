@@ -1,0 +1,10 @@
+.product img
+{
+    width: 80%;
+}
+
+.product p
+{
+    margin: auto;
+    max-width: 600px;
+}

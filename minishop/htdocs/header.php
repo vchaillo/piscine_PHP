@@ -8,6 +8,9 @@ session_start();
     <link type="text/css" rel="stylesheet" href="/assets/css/application.css?<?php echo time(); ?>"/>
     <link type="text/css" rel="stylesheet" href="/assets/css/header.css?<?php echo time(); ?>"/>
     <link type="text/css" rel="stylesheet" href="/assets/css/index.css?<?php echo time(); ?>"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/cart.css?<?php echo time(); ?>"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/product.css?<?php echo time(); ?>"/>
+    <link type="text/css" rel="stylesheet" href="/assets/css/font-awesome/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="/assests/img/icon.png" />
 </head>
 

@@ -1,0 +1,19 @@
+table
+{
+    width: 100%;
+}
+th
+{
+    text-align: left;
+}
+td
+{
+    width: 25%;
+}
+table .fa
+{
+    margin-left: 10px;
+    font-size: 0.9em;
+    line-height: 0.9em;
+    padding: 5px;
+}

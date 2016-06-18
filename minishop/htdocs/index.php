@@ -1,5 +1,12 @@
 <?php
+
 include("header.php");
+include("includes/db_connect.php");
+include("includes/product.php");
+
+$db = db_connect();
+$products = get_all_products($db);
+
 ?>
 
 <div class="bloc">
