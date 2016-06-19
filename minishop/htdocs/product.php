@@ -16,6 +16,7 @@ if ($_GET["id"] and $_GET["id"] != '')
 
 <div class="bloc product">
     <h2><?php echo $product['name'] ?></h2>
+    <h4>Brand : <?php echo '<a href="/category.php?cat=' . $product['categorie'] . '">' . $product['categorie'] . '</a>' ?></h4>
     <img src="<?php echo $product['image'] ?>">
     <h4>Price : <?php echo $product['price'] ?>$</h4>
     <p><?php echo utf8_decode($product['description']) ?></p>

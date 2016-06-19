@@ -12,7 +12,11 @@ function    user_create($db)
                 return ('<html><body><p class="error">Choose an another nickname</p></body></html>');
             else
             {
-                $_SESSION["id"] = $_POST["login"];
+                $query = "SELECT count(*) FROM User";
+                $result = mysqli_query($db, $query);
+                $count = mysqli_fetch_assoc($result);
+                $id = $count['count'] + 1;
+                $_SESSION["id"] = $id;
                 $_SESSION["lvl"] = 0;
                 $salt = hash("whirlpool", "RhvFgdo7HdwW");
                 $password = hash("whirlpool", $password);

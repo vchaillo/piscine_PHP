@@ -53,6 +53,20 @@ if (create_db() || $db)
 		} else {
 		    echo "Error creating admin user: " . mysqli_error($db) . "\n";
 		}
+		
+		// Creation of table Command
+		$sql = "CREATE TABLE Command (
+			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+			user_id INT(6) UNSIGNED NOT NULL,
+			products VARCHAR(255) NOT NULL,
+			total INT(6) NOT NULL)";
+		if (mysqli_query($db, $sql)) {
+		    echo "Table Command created successfully\n";
+		} else {
+		    echo "Error creating table: " . mysqli_error($db) . "\n";
+		}
+
+		// Creation of table Product
 		$sql = "CREATE TABLE Product (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			name VARCHAR(30) NOT NULL,
