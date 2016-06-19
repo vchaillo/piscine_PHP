@@ -1,18 +1,20 @@
 <?php
 
-include("header.php");
+session_start();
 include("includes/db_connect.php");
 include("includes/user_connect.php");
-
 $db = db_connect();
 $login_error = user_connect($db);
+include("header.php");
+
+echo $_POST['login'] . ' ' . $_POST['passwd']
 
 ?>
 
 <div class="bloc">
     <h1>Connection</h1>
     <?php echo $login_error; ?>
-    <form action="login.php" method="POST">
+    <form action="/minishop/login.php" method="POST">
         <label for="login">Nickname</label>
         <br>
         <input autofocus required type="text" name="login" />

@@ -4,7 +4,7 @@ include("includes/db_connect.php");
 
 function	create_db()
 {
-	$mysql = mysqli_connect("127.0.0.1", 'root', '123456');
+	$mysql = mysqli_connect("127.0.0.1", 'root', 'root');
 	if (!$mysql) {
 	    die("Connection failed: " . mysqli_connect_error() . "\n");
 		return (0);

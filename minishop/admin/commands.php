@@ -1,13 +1,14 @@
 <?php
 
+session_start();
+if (!isset($_SESSION['lvl']) || $_SESSION['lvl'] == 0)
+    header('Location: /minishop/index.php');
+
 include("../header.php");
 include("../includes/db_connect.php");
 include("../includes/command.php");
 include("../includes/product.php");
 include("../includes/user.php");
-
-if (!isset($_SESSION['lvl']) || $_SESSION['lvl'] == 0)
-    header('Location: /index.php');
 
 $db = db_connect();
 $commands = get_all_commands($db);

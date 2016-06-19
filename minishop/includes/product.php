@@ -20,12 +20,15 @@ function	get_product($db, $id)
 function	add_to_cart($product)
 {
 	$find = false;
-	foreach ($_SESSION["cart"] as $key => $elem)
+	if ($_SESSION['cart'])
 	{
-		if ($elem == $product['id'])
+		foreach ($_SESSION["cart"] as $key => $elem)
 		{
-			$find = true;
-			$pos = $key;
+			if ($elem == $product['id'])
+			{
+				$find = true;
+				$pos = $key;
+			}
 		}
 	}
 	if ($find == true)
