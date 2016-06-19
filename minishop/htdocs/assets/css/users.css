@@ -1,0 +1,9 @@
+ul
+{
+	list-style: none;
+}
+
+li .fa
+{
+	margin-left: 10px;
+}

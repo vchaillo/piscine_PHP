@@ -1,0 +1,26 @@
+.car img
+{
+	width: 200px;
+}
+
+.car
+{
+	display: inline-block;
+	margin: auto 20px;
+}
+
+.car p
+{
+	margin-top: 10px;
+}
+
+.cat
+{
+	border-bottom: 1px solid #222;
+}
+
+.brand
+{
+	display: inline-block;
+	padding: 20px;
+}
