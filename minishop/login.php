@@ -7,8 +7,6 @@ $db = db_connect();
 $login_error = user_connect($db);
 include("header.php");
 
-echo $_POST['login'] . ' ' . $_POST['passwd']
-
 ?>
 
 <div class="bloc">
