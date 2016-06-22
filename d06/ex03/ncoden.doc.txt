@@ -1,0 +1,46 @@
+
+<- Matrix ----------------------------------------------------------------------
+
+ ==== Constructor ===
+
+The Matrix class handles a 4x4 matrix (XYZ:W).
+An instance can be contructed with a preset.
+|	new Matrix( array( 'preset' => Matrix::..., ... ) );
+
+The following presets are avalaible:
+ - Matrix::IDENTITY
+ - Matrix::SCALE			( Require the 'scale' )
+ - Matrix::TRANSLATION		( Require the translation Vector 'vtc' )
+ - Matrix::RX, RY, RZ		( Require 'angle' in degrees )
+
+ - Matrix::PROJECTION
+ Require	'fov', the field of view (in degrees)
+			'ratio', the projected image ratio
+			'near', the near clipping plane of the projection
+			'far', the far clipping plane of the projection
+
+The constructor return FALSE without the required values.
+
+
+Without preset given, an instance can be constructed with the XYZW Vertexs:
+
+|	new Matrix( array( 
+|		'x' => new Vertex('x' => 0, 'y' => 0, 'z' => 0, 'w' => 0),
+|		'y' => new Vertex('x' => 0, 'y' => 0, 'z' => 0, 'w' => 0),
+|		...
+|	) );
+
+The XYZW vertexs are optionnals. Their default value are a new instance
+of a [0 0 0 :0] Vertex.
+|	new Matrix( array () );
+
+
+ ==== Methods ===
+
+|	mult( Matrix $rhs )
+Return a new matrix resulting from the multiplication of two matrices.
+
+|	transformVertex( Vertex $vtx )
+Return a new vertex resulting from the processing of the vertex by the matrix.
+
+---------------------------------------------------------------------- Matrix ->
