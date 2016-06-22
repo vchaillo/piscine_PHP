@@ -1,0 +1,14 @@
+
+<- Vector ----------------------------------------------------------------------
+The Vector class handles XYZ:W homogeneous coordinates.
+
+An instance can be contructed from a destination vertex instance
+(see Vertex doc):
+new Vector( array( 'dest' => new Vertex(...) ) );
+
+The dest Vertex is required. The constructor return FALSE
+without this values.
+
+Origin vertex is optionnal. His default values is a new (0,0,0,1) Vertex
+instance;
+---------------------------------------------------------------------- Vector ->

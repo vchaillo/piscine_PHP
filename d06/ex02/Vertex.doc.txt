@@ -1,0 +1,16 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles xyz:w homogeneous coordinates.
+
+An instance can be contructed from x, y, z value:
+new Vertex( array( 'x' => 21, 'y' => 42, 'z' => 84 ) );
+
+The xyz coordinates are required. The constructor return FALSE
+without theses values.
+
+w coordinate and color are optionnals. Their default values are
+'1.00' and a new white Color instance respectively;
+
+xyz:w coordinates are converted to floats.
+Any other use is undefined behaviour.
+---------------------------------------------------------------------- Vertex ->

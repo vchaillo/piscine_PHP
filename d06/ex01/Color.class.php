@@ -32,13 +32,13 @@ class Color {
 
 	public function __destruct() {
 		if (self::$verbose == true) {
-			printf( 'Color( red: %3d, green: %3d, blue: %3d) destructed' . PHP_EOL, $this->red, $this->green, $this->blue );
+			printf( 'Color( red: %3d, green: %3d, blue: %3d ) destructed.' . PHP_EOL, $this->red, $this->green, $this->blue );
 		}
 		return;
 	}
 
 	public function __toString() {
-		return(sprintf( 'Color( red: %3d, green: %3d, blue: %3d )' . PHP_EOL, $this->red, $this->green, $this->blue ));
+		return(sprintf( 'Color( red: %3d, green: %3d, blue: %3d )', $this->red, $this->green, $this->blue ));
 	}
 
 	public function add( Color $instance) {
