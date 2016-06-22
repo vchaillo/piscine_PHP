@@ -23,7 +23,7 @@ class Matrix {
 	}
 
 	public function __construct( array $kwargs ) {
-		if (array_key_exists('preset', $kwargs))
+		if (isset($kwargs['preset']))
 		{
 			$matrix = array();
 			$preset = $kwargs['preset'];
@@ -41,6 +41,34 @@ class Matrix {
 				$matrix[2] = [0, 0, $scale, 0];
 				$matrix[3] = [0, 0, 0, 1];
 
+			}
+			elseif ($preset == self::TRANSLATION
+					&& isset($kwargs['vtc'])
+					&& is_a($kwargs['vtc'], Vector)) {
+				$vtc = $kwargs['vtc'];
+				$matrix[0] = [1, 0, 0, $vtc->getX()];
+				$matrix[1] = [0, 1, 0, $vtc->getY()];
+				$matrix[2] = [0, 0, 1, $vtc->getZ()];
+				$matrix[3] = [0, 0, 0, 1];
+			}
+			else if ($preset == self::PROJECTION
+					&& isset($kwargs['fov'])
+					&& isset($kwargs['ratio'])
+					&& isset($kwargs['near'])
+					&& isset($kwargs['far']))
+			{
+				$r = (float)$kwargs['ratio'];
+				$n = (float)$kwargs['near'];
+				$f = (float)$kwargs['far'];
+				$e = $n / tan(deg2rad((float)$kwargs['fov'] * 0.5));	//Focal Length
+
+				$t1 = - ($f + $n) / ($f - $n);
+				$t2 = - (2 * $f * $n) / ($f - $n);
+
+				$matrix[0] = [$e / $r	, 0		, 0		, 0		];
+				$matrix[1] = [0			, $e	, 0		, 0		];
+				$matrix[2] = [0			, 0		, $t1	, $t2	];
+				$matrix[3] = [0			, 0		, -1	, 0		];
 			}
 			else if (($preset == self::RX
 					|| $preset == self::RY
@@ -72,34 +100,6 @@ class Matrix {
 					$matrix[2] = [0		, 0		, 1		, 0];
 					$matrix[3] = [0		, 0		, 0		, 1];
 				}
-			}
-			elseif ($preset == self::TRANSLATION
-					&& isset($kwargs['vtc'])
-					&& is_a($kwargs['vtc'], Vector)) {
-				$vtc = $kwargs['vtc'];
-				$matrix[0] = [0, 0, 0, $vtc->getX()];
-				$matrix[1] = [0, 0, 0, $vtc->getY()];
-				$matrix[2] = [0, 0, 0, $vtc->getZ()];
-				$matrix[3] = [0, 0, 0, 1];
-			}
-			else if ($preset == self::PROJECTION
-					&& isset($kwargs['fov'])
-					&& isset($kwargs['ratio'])
-					&& isset($kwargs['near'])
-					&& isset($kwargs['far']))
-			{
-				$r = (float)$kwargs['ratio'];
-				$n = (float)$kwargs['near'];
-				$f = (float)$kwargs['far'];
-				$e = $n / tan(deg2rad((float)$kwargs['fov'] * 0.5));	//Focal Length
-
-				$t1 = - ($f + $n) / ($f - $n);
-				$t2 = - (2 * $f * $n) / ($f - $n);
-
-				$matrix[0] = [$e / $r	, 0		, 0		, 0		];
-				$matrix[1] = [0			, $e	, 0		, 0		];
-				$matrix[2] = [0			, 0		, $t1	, $t2	];
-				$matrix[3] = [0			, 0		, -1	, 0		];
 			}
 
 			$this->_x = new Vertex(['x' => $matrix[0][0], 'y' => $matrix[0][1], 'z' => $matrix[0][2], 'w' => $matrix[0][3]]);
