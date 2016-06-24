@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ft_list</title>
+		<script src="todo.js"></script>
+		<style>
+			body
+			{
+				text-align: center;
+				font-family: sans-serif;
+				color: #fff;
+				background-color: #111;
+			}
+			h1
+			{
+				color: #FFD032;
+			}
+			button
+			{
+			    display: inline-block;
+			    padding: 10px;
+			    border-radius: 3px;
+			    margin: 5px auto;
+			    line-height: 20px;
+		        font-size: 1em;
+			    background-color: #FFD032;
+			    border: 1px solid #FFD032;
+			    font-weight: bold;
+			    -webkit-appearance: none;
+			    margin-top: 20px;
+			}
+			.todo
+			{
+				background-color: #222;
+				padding: 10px;
+				width: 95%;
+				max-width: 800px;
+				margin: 5px auto;
+				text-align: left;
+				box-shadow: 5px 5px 5px 0px #000;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Todo list</h1>
+		<div id="ft_list"></div>
+		<button onclick="ft_prompt();">New</button>
+		<script>init();</script>
+	</body>
+</html>

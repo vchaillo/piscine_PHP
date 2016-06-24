@@ -11,6 +11,23 @@
 				font-family: sans-serif;
 			}
 		</style>
+		<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<h1>Calculator</h1>
+		<input type="text" id="leftMember" />
+		<select id="operator">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+		</select>
+		<input type="text" id="rightMember" />
+		<br>
+		<br>
+		<input type="submit" value="Try me!"/>
+
 		<script>
 			function isPositiveInteger(n) {
 				if (!(typeof n === "number" || parseInt(n) == n))
@@ -21,11 +38,10 @@
 					&& n >= 0;
 			}
 
-			function solve() {
-				var left = document.getElementById('leftMember').value,
-						right = document.getElementById('rightMember').value,
-						select = document.getElementById("operator"),
-						operator = select.options[select.selectedIndex].value,
+			$('input[type="submit"]').click(function solve() {
+				var left = $('#leftMember').val(),
+						right = $('#rightMember').val(),
+						operator = $('#operator').find('option:selected').val();
 						result = 0,
 						error = 0;
 				if (isPositiveInteger(left) && isPositiveInteger(right)) {
@@ -60,7 +76,7 @@
 						show(result);
 				} else
 					alert('Error :(');
-			}
+			});
 
 			function show(msg) {
 				console.log(msg);
@@ -71,20 +87,5 @@
 				alert('Please, use me...');
 			}, 30000);
 		</script>
-	</head>
-	<body>
-		<h1>Calculator</h1>
-		<input type="text" id="leftMember" />
-		<select id="operator">
-			<option value="+">+</option>
-			<option value="-">-</option>
-			<option value="*">*</option>
-			<option value="/">/</option>
-			<option value="%">%</option>
-		</select>
-		<input type="text" id="rightMember" />
-		<br>
-		<br>
-		<input type="submit" value="Try me!" onClick="solve();" />
 	</body>
 </html>

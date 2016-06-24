@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Balloon</title>
+		<style>
+			body
+			{
+				margin-top: 10%;
+				text-align: center;
+				font-family: sans-serif;
+			}
+			#balloon {
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin: auto;
+				border-radius: 50%;
+			}
+		</style>
+		<script   src="https://code.jquery.com/jquery-3.0.0.min.js"   integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="   crossorigin="anonymous"></script>
+	</head>
+	<body>
+		
+		<div id="balloon"></div>
+
+		<script>
+			var size = 200;
+			var color = 0;
+
+			$('#balloon').click(function() {
+				size += 10;
+				if (size > 420)
+					size = 200;
+				$(this).css('width', size + 'px');
+				$(this).css('height', size + 'px');
+				if (color == 0) {
+					$(this).css('background-color', 'green');
+					color = 1;
+				}
+				else if (color == 1) {
+					$(this).css('background-color', 'blue');
+					color = 2;					
+				}
+				else if (color == 2) {
+					$(this).css('background-color', 'red');
+					color = 0;
+				}
+			});
+
+			$('#balloon').mouseout(function() {
+				size -= 5;
+				if (size < 200)
+					size = 200;
+				$(this).css('width', size + 'px');
+				$(this).css('height', size + 'px');
+				if (color == 0) {
+					$(this).css('background-color', 'blue');
+					color = 2;
+				}
+				else if (color == 1) {
+					$(this).css('background-color', 'red');
+					color = 0;					
+				}
+				else if (color == 2) {
+					$(this).css('background-color', 'green');
+					color = 1;
+				}
+			});
+		</script>
+	</body>
+</html>
