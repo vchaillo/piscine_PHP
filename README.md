@@ -1,4 +1,4 @@
-# piscine_PHP
+#piscine_PHP
 
 * [Subject d00] (https://github.com/vchaillo/piscine_PHP/blob/master/subjects/subject_PHP_d00.pdf)
 * [Subject d01] (https://github.com/vchaillo/piscine_PHP/blob/master/subjects/subject_PHP_d01.pdf)
@@ -14,4 +14,9 @@
 * [Subject rush01] (https://github.com/vchaillo/piscine_PHP/blob/master/subjects/subject_PHP_rush01.pdf)
 
 =============
-Project of 42
+###Description
+
+Cette piscine PHP est la porte d'entrée pour l'ensemble des projets Web du cursus 42. Elle aborde de façon simple les fondamentaux liés à cette technologie.
+
+===================
+Projet de l'ecole 42
